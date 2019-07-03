@@ -1,0 +1,49 @@
+// Button Styles
+a {
+  display: inline-block;
+  text-decoration: none !important;
+  color: $white;
+  font-size: 14px;
+
+  &:focus,
+  &:hover {
+    color: inherit;
+    outline: none;
+  }
+}
+
+.ic-btn-primary {
+  position: relative;
+  line-height: 50px;
+  height: 50px;
+  border: 1px solid $primary;
+  padding: 0;
+  @include border-radius(4px);
+  padding-left: 25px;
+  padding-right: 25px;
+  color: $primary;
+  font-size: 14px;
+  font-weight: 600;
+  @include box-shadow(0 1px 1px rgba(230, 40, 133, 0.25));
+  @include transition(all.3s ease-in-out 0s);
+
+  &:focus {
+    color: $primary;
+  }
+
+  &.active,
+  &:hover {
+    color: $white;
+    background: $primary;
+  }
+}
+
+@media only screen and (max-width:767px) {
+  .ic-btn-primary {
+    line-height: 40px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
