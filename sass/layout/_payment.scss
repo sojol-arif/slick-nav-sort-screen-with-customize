@@ -1,0 +1,111 @@
+.ic-payment{
+    h2{
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+    table{
+        tr{
+            td:first-child{
+                font-weight: bold;
+                font-size: 15px;
+                color:$secondary;
+            }
+        }
+    }
+    .plan{
+        margin-top: 30px;
+    }
+    .plan .wrapper {
+        padding-left: 0; 
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .plan .inner {
+        @include justify-content(flex-start);
+    }
+    .single-plan{
+        &:hover{
+            .single-plan-inner{
+                background:transparent;
+                .top{
+                    border-bottom: 1px solid #eceaf4;
+                    .icon{
+                        margin-bottom: 20px;
+                        i{
+                            color: $secondary;
+                        }
+                    }
+                    h2{
+                        color: $secondary;
+                    }
+                    h3{
+                        color:rgba(0, 0, 0, 0.6);
+                    }
+                }
+                .bottom{
+                    p{
+                        color: $secondary;
+                    }
+                    a{
+                        background-color: $secondary;
+                        color: $white;
+                    }
+                } 
+            }
+        }
+        &::after{
+            position: absolute;
+            content: "Most Popular";
+            background-color: #261579;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            width: 100%;
+            height: 40px;
+            top: 19px;
+            color: #fff;
+            font-size: 15px;
+            transform: rotate(-38deg);
+            left: -27%;
+        }
+    }
+    @extend %form;
+    @extend %form-group-margin;
+    .ic-right-col-p{
+        margin-bottom: 40px;
+    }
+    .ic-input-group{
+        position: relative;
+        .input-group-prepend{
+            position: absolute;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            -ms-align-items: center;
+            align-items: center;
+            height: 100%;
+            color: #959595;
+            font-size: 22px;
+            padding-left: 25px;
+            position: absolute;
+            left: 0;
+            pointer-events: none;
+        }
+    }
+}
+.ic-input-group{
+    .input-group-prepend{
+        &.active{
+            i{
+                color:$secondary;
+            }
+        }
+    }
+}
+.ic-icon-card{
+    padding-left: 65px !important;
+}

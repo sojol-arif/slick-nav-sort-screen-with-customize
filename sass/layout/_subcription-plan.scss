@@ -1,0 +1,224 @@
+.subcription-plan{
+    .monthly-annualy{
+        @include flexbox();
+        margin-top: 40px;
+        margin-bottom: 40px;
+        .monthly,
+        .annualy,
+        h6,
+        div{
+            display: inline-block;
+        }
+        .monthly{
+            @include flexbox();
+            .length{
+                width: 60px;
+                height: 20px;
+                background: $box-color;
+                position: relative;
+                border-radius: 2px;
+                margin-left: 15px;
+                margin-right: 15px;
+                .how-many-length{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 20px;
+                    background: #44348f;
+                    border-radius: 2px;
+                    height: 100%;
+                }
+            }
+        }
+        .annualy{
+            h6{
+                span{
+                    font-size: 12px;
+                    color: #a4abb5;
+                    padding-left: 3px;
+                }
+            }
+        }
+    }
+}
+.plan{
+    text-align: center;
+    .wrapper{
+        max-width: 1140px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .inner{
+        @include flexbox();
+        @include justify-content(center);
+    }
+    .single-plan{
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 250px;
+        position: relative;
+        overflow: hidden;
+        @include border-radius(10px);
+            @include box-shadow(1px 1.732px 7.68px 0.32px rgba(24, 23, 27, 0.05));
+        max-width: 290px;
+        .single-plan-inner {
+            margin-left: auto;
+            margin-right: auto;
+            @include transition(.2s);
+            height: 100%;
+            h1,
+            h2,
+            p,
+            button{
+                @include transition(.2s);
+            }
+            &::after{
+                width: 0;
+                height: 103%;
+                top: 50%;
+                left: 50%;
+                background: $secondary;
+                opacity: 0;
+                -webkit-transform: translateX(-50%) translateY(-50%);
+                -moz-transform: translateX(-50%) translateY(-50%);
+                -ms-transform: translateX(-50%) translateY(-50%);
+                transform: translateX(-50%) translateY(-50%);
+                content: '';
+                position: absolute;
+                z-index: -1;
+                -webkit-transition: all 0.2s;
+                -moz-transition: all 0.2s;
+                transition: all 0.2s;
+            } 
+            .top{
+                border-bottom: 1px solid #eceaf4;
+                @include transition(.2s ease-out);
+                .icon{
+                    margin-bottom: 20px;
+                    i{
+                        font-size: 115px;
+                        color: $secondary;
+                    }
+                }
+                h2{
+                    margin-bottom: 0;
+                }
+                h1{
+                    color: #a4abb5;
+                    margin-bottom: 0;
+                }
+                h3{
+                    color: rgba(0,0,0, .6);
+                    margin-bottom: 3px;
+                    margin-top: 7px;
+                    text-decoration: line-through;
+                }
+            }
+            .bottom{
+                p{
+                    line-height: 2;
+                }
+                button{
+                    padding: 10px 20px;
+                    background-color: $secondary;
+                    color: $white;
+                    text-transform: uppercase;
+                    font-size: 15px;
+                    @include border-radius(4px);
+                    margin-top: 32px;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+            .top,
+            .bottom{
+                padding:40px 50px;
+            }
+            &:hover{
+                // background-color: $secondary;
+                &::after{
+                    width: 100%;
+                    opacity: 1;
+                }
+                .top{
+                    border-bottom: 1px solid #57499b;
+                    .icon{
+                        margin-bottom: 20px;
+                        i{
+                            color: $white;
+                        }
+                    }
+                    h2{
+                        color: $white;
+                    }
+                    h3{
+                        color:rgba(255,255,255, .5)
+                    }
+                }
+                .bottom{
+                    p{
+                        color: $white;
+                    }
+                    button{
+                        background-color: $white;
+                        color: $secondary;
+                    }
+                } 
+            }
+        }
+        &:nth-child(3){
+            &::after{
+                position: absolute;
+                content: "Most Popular";
+                background-color: #261579;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                width: 100%;
+                height: 40px;
+                top: 19px;
+                color: #fff;
+                font-size: 15px;
+                transform: rotate(-38deg);
+                left: -27%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:1200px){
+    .plan .single-plan .single-plan-inner .top, .plan .single-plan .single-plan-inner .bottom {
+        padding: 40px 45px;
+    }
+}
+@media only screen and (max-width:991px){
+    .single-plan{
+        margin-bottom: 35px;
+    }
+}
+@media only screen and (max-width:991px) and (min-width:767px){
+    .plan .single-plan .single-plan-inner .top, .plan .single-plan .single-plan-inner .bottom {
+        padding: 40px 28px;
+    }
+    .plan .single-plan{
+        margin-bottom: 35px;
+    }
+    .plan .single-plan .single-plan-inner .bottom a {
+        padding: 6px 11px;
+    }
+}
+@media only screen and (max-width: 767px){
+    .plan .single-plan {
+        margin-bottom: 35px;
+        flex-basis: 48%;
+    }
+    .plan .inner {
+        @include flex-wrap(wrap);
+    }
+}
+@media only screen and (max-width: 575px){
+    .plan .single-plan {
+        @include flex-basis(100%);
+    }
+}

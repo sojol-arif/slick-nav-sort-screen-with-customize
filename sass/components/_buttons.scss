@@ -2,48 +2,76 @@
 a {
   display: inline-block;
   text-decoration: none !important;
-  color: $white;
-  font-size: 14px;
-
-  &:focus,
+  @include transition(.15s);
+  &::focus {
+    border: none;
+  }
   &:hover {
-    color: inherit;
     outline: none;
   }
 }
 
-.ic-btn-primary {
+.ic-btn-primary{
   position: relative;
-  line-height: 50px;
-  height: 50px;
-  border: 1px solid $primary;
-  padding: 0;
+  overflow: hidden;
+  background-color: $secondary;
+  color:$primary;
   @include border-radius(4px);
-  padding-left: 25px;
-  padding-right: 25px;
-  color: $primary;
-  font-size: 14px;
-  font-weight: 600;
-  @include box-shadow(0 1px 1px rgba(230, 40, 133, 0.25));
-  @include transition(all.3s ease-in-out 0s);
-
-  &:focus {
-    color: $primary;
+  height: 50px;
+  padding-left: 22px;
+  padding-right: 22px;
+  font-size: 15px;
+  line-height: 50px;
+  @include transition(.3s ease-out);
+  margin-top:40px;
+  text-transform: uppercase;
+  z-index: 1;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50px;
+    bottom: 0;
+    left: 0;
+    border-right: 50px solid transparent;
+    border-bottom: 80px solid $primary;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    @include transition(.3s ease-out);
+    z-index: -1;
   }
-
-  &.active,
-  &:hover {
-    color: $white;
-    background: $primary;
+  &:hover{
+    color:$secondary;
+    @include box-shadow(0px 0px 5px 2px rgba(0, 0, 0, 0.35));
+    //@include box-shadow(0px 10px 5px 2px rgba(0, 0, 0, 0.35));
+    &::before{
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
   }
 }
-
-@media only screen and (max-width:767px) {
+.ic-btn-solid{
+  background-color: $primary;
+  color: $secondary;
+  &:hover,
+  &.active{
+    background-color: $secondary;
+    color: $primary;
+  }
+}
+.ic-btn-primary.invert{
+  background-color: $primary;
+  color:$secondary;
+  &::before{
+    border-bottom: 80px solid $secondary;
+  }
+  &:hover{
+    @include box-shadow(0px 0px 5px 5px rgba(255,255, 255, .15));
+    color:$primary;
+  }
+}
+@media only screen and (max-width:767px){
   .ic-btn-primary {
-    line-height: 40px;
-    height: 40px;
-    line-height: 40px;
-    padding-left: 18px;
-    padding-right: 18px;
+    margin-top: 25px;
   }
 }

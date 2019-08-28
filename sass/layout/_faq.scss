@@ -1,0 +1,249 @@
+.ic-faq{
+    position: relative;
+    // .tab-pane{
+    //     margin-top: 50px;
+    // }
+    // .tab-pane.fade.active.show{
+    //     transition: margin .5s ease-out .3s;
+    //     margin-top: 0px;
+    // }
+    .ic-bg-faq{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 536px;
+        background-color: $secondary;
+        z-index: -1;
+    }
+    h1{
+        text-align: center;
+        font-size: 3.75em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        margin-bottom: 0;
+    }
+    .ic-content{
+        @include border-radius(10px);
+        @include box-shadow(1px 1.732px 7.68px 0.32px rgba(24, 23, 27, 0.1));
+        padding:75px 90px;
+        background-color: $white;
+        padding-bottom: 0;
+        h3{
+            margin-bottom: 25px;
+            line-height: 2;
+        }
+        ul.nav-pills{
+            @include border-radius(6px);
+            border:1px solid $secondary;
+            li.nav-item{
+                @include flex-grow(1);
+                a.nav-link{
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    color:$secondary;
+                    font-size: 16px;
+                    font-weight: 600;
+                    text-align: center;
+                    &.active{
+                        background-color: $secondary;
+                        color: $primary;
+                    }
+                }
+            }
+        }
+        .tab-content{
+            margin-top: 50px;
+            .tab-pane{
+
+            }
+        }
+    }
+    .accordion{
+        padding-bottom: 60px;
+    }
+    .card{
+        background-color: #fff;
+        @include box-shadow(1px 1.732px 7.68px 0.32px rgba(24, 23, 27, 0.1));
+        @include border-radius(6px !important);
+        margin-bottom: 20px;
+        border:none;
+        .card-header{
+            border:none;
+            padding:0 !important;
+            background-color: $white;
+            h2{
+                button{
+                    padding:12px 35px !important;
+                    width: 100%;
+                    font-size: 15px;
+                    font-weight: 600;
+                    padding:0px;
+                    color:$secondary;
+                    @include flexbox();
+                    text-align: left;
+                    text-decoration: none;
+                    @include transition(all .15s);
+                    i{
+                        padding-right: 4px;
+                        font-size: 10px;
+                        padding-top: 5px;
+                    }
+                    i.fa-minus{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .card-body{
+            font-size: 15px;
+            padding:35px;
+        }
+        &.header-s{
+            @include box-shadow(2px 3.464px 14.72px 1.28px rgba(38, 21, 121, 0.1));
+            .card-header{
+                background-color: $secondary;
+                @include border-radius(5px !important);
+                h2{
+                    button{
+                        color:$primary;
+                        white-space: normal;
+                        i.fa-minus{
+                            display: inline-block;
+                        }
+                        i.fa-plus{
+                            display: none;
+                        }
+                    }
+                } 
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:992px){
+    #ul-arrow{
+        display: none;
+    }
+    div#selected--zg-ul-select {
+        display: none;
+    }
+}
+@media only screen and (max-width:992px){
+    .ic-faq h1 {
+        font-size: 3em;
+    }
+    .ic-faq .ic-content {
+        padding: 35px 44px;
+        padding-bottom: 0;
+    }
+    .ic-faq .card .card-header h2 button {
+        padding: 12px 25px !important;
+        white-space: normal;
+    }
+    .ic-faq .card .card-body {
+        padding: 25px;
+    }
+    .ic-faq .ic-bg-faq {
+        height: 400px;
+    }
+    .ic-faq .ic-content ul.nav-pills li.nav-item a.nav-link {
+        font-size: 15px;
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+    #ul-arrow{
+        display: inline-block;
+        right: 10px;
+        position: absolute;
+        height: 22px; 
+    }
+    .ic-tab-dropdown{
+        ul#pills-tab{
+            cursor: pointer;
+            li {
+                display: none;
+                &.active {
+                    align-items: center;
+                    box-shadow: 0 0 2px #aaa;
+                    display: flex;
+                    justify-content: space-between;
+                    position: relative;
+                }
+                &:hover{
+                    a{
+                        color:$primary;
+                    }
+                }
+                a.active{
+                    background-color: transparent;
+                    color:$secondary;
+                    &:hover{
+                        color: $primary;
+                    }
+                }
+            }
+            &.active {
+                border: 1px solid #aaa;
+                li {
+                    border: none;
+                    box-shadow: none;
+                    display: block;
+                    @include flex-basis(100%);
+                    &:hover {
+                        background: $secondary;
+                    }
+                }
+            }
+        }
+        #selected--zg-ul-select {
+            align-items: center;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            width: auto;
+            padding-top:15px;
+            padding-bottom:15px;
+            border-radius: 6px;
+            color: $secondary;
+            font-size: 15px;
+            font-weight: 600;
+            display: none;
+            &.active{
+                border:1px solid $secondary;
+                display: block;
+                padding: 15px 7px;
+                position: relative;
+            }
+        }
+    }
+    .ic-faq .ic-content .tab-content {
+        margin-top: 30px;
+    }
+}
+@media only screen and (max-width: 767px){
+    .ic-faq h1 {
+        font-size: 2.5em;
+    }
+    .ic-faq .accordion {
+        padding-bottom: 45px;
+    }
+    .ic-faq .ic-content h3 {
+        line-height: 1.5;
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 575px){
+    .ic-faq .ic-content {
+        padding: 25px 20px;
+    }
+    .ic-faq h1 {
+        font-size: 2em;
+    }
+    .ic-faq .card .card-header h2 button {
+        padding: 12px 20px !important;
+    }
+    .ic-faq .card .card-body {
+        padding: 20px;
+    }
+}

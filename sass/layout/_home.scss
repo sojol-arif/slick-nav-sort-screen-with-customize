@@ -1,12 +1,448 @@
-#ic-register {
-    transition: background .6s ease-in-out;
-    background-color: rgba(20, 19, 19, .7);
+main{
+    padding-top: 80px;
+}
+.ic-single-slider .ic-slider-caption{
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    right:20%;
+    transform: translateY(-50%);
+    max-width: 750px;
+    z-index: 1;
+}
+.ic-single-slider figure{
+    position: relative;
+}
+.ic-single-slider .slick-prev,
+.ic-single-slider .slick-next {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
 
-    .modal-dialog {
-        top: 50%;
-        @include translateY(-50%);
-        transition: margin .5s ease-out,
-            opacity .4s ease-out;
-        margin-top: -10rem;
+
+.ic-slider-practice .slick-prev:before,
+.ic-slider-practice .slick-next:before {
+  font-size: 48px;
+  font-family: icofont !important;
+  height: 100%;
+  width: 100%;
+  line-height: 60px;
+  text-align: center;
+  opacity: 1;
+  color:$secondary !important;
+}
+
+.ic-slider-practice .slick-prev {
+  left: 10%;
+  z-index: 5;
+}
+.ic-slider-practice .slick-next {
+    right: 10%;
+    z-index: 5;
+  }
+
+.ic-slider-practice .slick-prev:before {
+  content: "\eb8a" !important;
+}
+.ic-slider-practice .slick-next:before {
+    content: "\eb8b" !important;
+}
+.delivery{
+    .single-col{
+           @include box-shadow(1px 1.732px 7.68px 0.32px rgba(24, 23, 27, 0.1));
+           @include border-radius(10px);
+           padding: 40px;
+           cursor: pointer;
+           @include transition(.2s);
+           margin-bottom: 80px;
+           &*{
+            @include transition(.2s);
+           }
+        h3{
+
+        }
+        h2{
+            margin-bottom: 35px;
+        }
+        .ic-btn{
+            width:50px;
+            height: 50px;
+            @include border-radius(4px);
+            text-align: center;
+            padding: 15px;
+            background:transparent;
+            border:1px solid $secondary;
+            i{
+                color: $secondary;
+                font-size: 20px;
+            }
+        }
+        &:hover{
+            background-color: $secondary;
+            h3{
+                color: $white;
+            }
+            h2{
+                color:$primary;
+            }
+            .ic-btn{
+                background:$primary;
+                border:1px solid $primary;
+            }
+        }
+    }
+    .ic-image{
+        img{
+            z-index: 2;
+        }
+    }
+    .ic-content{
+        h2{
+
+        }
+        h1{
+
+        }
+        p{
+
+        }
+        a.ic-btn-primary{
+
+        }
+    }
+    .ic-center-align{
+        align-self: center;
+    }
+}
+.ic-online-retailers{
+    color:$white;
+    .image{
+        img{
+            z-index: 2;
+        }
+    }
+}
+#five-image{
+    .inner{
+        @extend %flex-center;
+        @include justify-content(space-around);
+        .image{
+            text-align: center;
+            img{
+
+            }
+        }
+    }
+}
+#slider-bottom{
+    margin-bottom: 110px;
+    .banner {
+        position: relative;
+        height: 355px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .dg-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .dg-wrapper {
+        width:600px;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+    }
+    
+    .dg-wrapper a {
+        width: 100%;
+        height: 320px;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        /*edit */
+        background: #fff;
+        @include border-radius(10px !important);
+        @include box-shadow(0px 2px 12px -1px rgba(24, 23, 27, 0.1) !important);
+        padding:35px 45px;
+        i{
+            font-size: 40px;
+            color: $primary;
+        }
+        p{
+            color: $text-color;
+            margin-top: 24px;
+            span{
+                color: $secondary;
+            }
+        }
+        &::after {
+            background: rgba(255, 255, 255, .5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 100%;
+        }
+        *{
+            transition: all 0.2s ease-in-out;
+        }
+    }
+    .dg-wrapper a.dg-center{
+        z-index: 1000 !important;
+        @include box-shadow(2px 3.464px 14.72px 1.28px rgba(24, 23, 27, 0.1) !important);
+        &::after {
+            opacity: 0;
+        }
+    }
+    
+    .dg-wrapper a:first-child {
+        z-index: 2;
+    }
+    
+    .dg-wrapper a .content {
+        display: block;
+        width: 100%;
+    }
+    
+    .dg-wrapper a.dg-transition {
+        transition: all 0.5s ease-in-out;
+    }
+    
+    .dg-wrapper a.dg-transition-fast {
+        transition: all 0.2s ease-in-out;
+    }
+    
+    .dg-container nav {
+        display: none;
+    }
+    
+    .dg-container nav span:hover {
+        opacity: 1;
+    }
+    
+    .dg-container nav span.dg-next {
+        background-position: top right;
+        margin-left: 10px;
+    }
+    
+    .dg-container #lightButton2 {
+        bottom: 20px;
+    }
+    
+    .dg-container .button {
+        position: ABSOLUTE;
+        z-index: 5;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 102%;
+        padding: 0;
+     }
+    
+    .dg-container .button li {
+        cursor: pointer;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        background: $secondary;
+    }
+    
+    .dg-container .button .light {
+        background: $primary;
+    }
+}
+#available-deliveryman{
+    background-color: $box-color;
+    .inner{
+        img{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1{
+            text-transform: uppercase;
+            margin-top: 40px;
+        }
+    }
+}
+
+@media only screen and (max-width:1200px){
+    #five-image{
+        .inner{
+            .image{
+                img{
+                    @include scale(.8);
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:1100px){
+    #slider-bottom .dg-wrapper a {
+        width: 100%;
+        height: 346px;
+    }
+    #slider-bottom .dg-wrapper {
+        width: 457px;
+    }
+    #slider-bottom .banner {
+        height: 389px;
+    }
+    .ic-single-slider .carousel-caption {
+        padding-left: 50px;
+    }
+}
+@media only screen and (max-width:991px){
+    body .slicknav_menu.ic-expand .slicknav_nav {
+        transform: translateX(0);
+    }
+    
+    body .slicknav_menu.ic-expand .slicknav_btn .slicknav_icon-bar:nth-child(2) {
+        left: 3px;
+    }
+    
+    body .slicknav_menu.ic-expand .slicknav_btn .slicknav_icon-bar:nth-child(3) {
+        left: 6px;
+    }
+    body .ic-bodyoverlay.ic-overlay-add {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        /*background: rgba(255, 39, 94, 0.9);*/
+        z-index: 9;
+        transition: all 0.4s;
+        background: -webkit-linear-gradient(left, rgba(255, 39, 94, 0.9) 0%, rgba(65, 70, 253, 0.9) 100%);
+        background: linear-gradient(to right, rgba(255, 39, 94, 0.9) 0%, rgba(65, 70, 253, 0.9) 100%);
+      }
+    .ic-single-slider .text .heading-text {
+        font-size: 2em;
+    }
+    .ic-single-slider .text p{
+        font-size: 14px;
+    }
+    .ic-single-slider .ic-btn-primary {
+        margin-top: 30px;
+    }
+    .ic-single-slider .slider-arrow i {
+        width: 30px;
+        height: 30px;
+        font-size: 25px;
+
+    }
+    .delivery .single-col {
+        padding: 25px;
+        margin-bottom: 60px;
+    }
+    #slider-bottom {
+        margin-bottom: 92px;
+    }
+    .ic-single-slider .carousel-caption {
+        padding: 200px 0;
+    }
+}
+@media only screen and (max-width:767px){
+    .ic-single-slider .text .heading-text {
+        font-size: 1.75em;
+    }
+    .delivery .single-col {
+        padding: 25px;
+        margin-bottom: 35px;
+    }
+    .ic-online-retailers{
+        .ic-btn-primary{
+            margin-bottom: 30px;
+        }
+    }
+    #five-image{
+        .inner{
+            @include flex-wrap(wrap);
+            .image{
+                margin-bottom: 15px;
+                img{
+                }
+            }
+        }
+    }
+    #slider-bottom .dg-wrapper {
+        width: 423px;
+    }
+    #slider-bottom .dg-container .button {
+        top: 100%;
+    }
+}
+@media only screen and (max-width: 650px){
+
+}
+@media only screen and (max-width:575px){
+    #five-image .inner .image {
+        @include flex-basis(50%);
+    }
+    .ic-single-slider .text .heading-text {
+        font-size: 1.75em;
+    }
+    .ic-single-slider .text {
+        max-width: 82%;
+    }
+    #slider-bottom .dg-wrapper{
+        width: 100%;
+    }
+    #slider-bottom .dg-wrapper a.dg-center{
+        display: block;
+    }
+    #slider-bottom .dg-wrapper a {
+        padding: 23px 15px;
+    }
+    #slider-bottom .dg-wrapper a::after {
+        background: rgba(255, 255, 255, 1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+    }
+    #slider-bottom .dg-container .button li {
+        cursor: pointer;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 7px;
+        background: #261579;
+    }
+    #slider-bottom .banner {
+        height: 378px;
+    }
+    #slider-bottom {
+        margin-bottom: 70px;
+    }
+    .ic-single-slider .carousel-caption {
+        padding: 150px 0;
+    }
+}
+@media only screen and (max-width: 350px){
+    h1 {
+        font-size: 21px;
+    }
+    .ic-single-slider .text {
+        max-width: 100%;
+    }
+    .ic-single-slider .carousel-caption {
+        padding: 102px 0;
     }
 }

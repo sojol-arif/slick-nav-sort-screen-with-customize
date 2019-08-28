@@ -227,3 +227,65 @@
 	background-image: -moz-linear-gradient(center top, $color1, $color2);
 	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color1), to($color2));
 }
+
+%flex-center{
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  height: 100%;
+}
+%form{
+  form{
+    label{
+        color:$contact-placeholder;
+        margin-bottom: 6px;
+    }
+    .form-group{
+        margin-bottom: 20px;
+    }
+    .form-control{
+        background-color: $box-color;
+        border:none;
+        padding-left: 25px;
+        margin-bottom: 0;
+        color: $secondary;
+        resize: none;
+        &:focus,
+        &:hover{
+            border:none;
+        }
+        &::placeholder {
+            color: $contact-placeholder;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        
+        &:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: $contact-placeholder;
+        }
+        
+        &::-ms-input-placeholder {
+            /* Microsoft Edge */
+            color: $contact-placeholder;
+        }
+        
+        &:-moz-input-placeholder {
+            /* Microsoft Edge */
+            color: $contact-placeholder;
+        }
+    }
+    .ic-btn-primary{
+        margin-top: 0;
+        border:none;
+    }
+}
+}
+%form-group-margin{
+    .form-group{
+        margin-bottom: 12px !important;
+    }
+    .ic-btn-primary{
+        margin-top: 25px !important;
+    }
+}

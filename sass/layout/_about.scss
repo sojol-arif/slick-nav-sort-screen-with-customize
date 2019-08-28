@@ -1,0 +1,77 @@
+.about{
+    .ic-top-section{
+        .loaction-img{
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+    }
+    .ic-mid-section{
+        background-color: $box-color;
+        .image-single{
+            position: relative;
+            margin-top: 40px;
+            @include border-radius(10px);
+            overflow: hidden;
+            @include box-shadow(1px 1.732px 7.68px 0.32px rgba(24, 23, 27, 0.05));
+            img{
+                width: 100%;
+                margin-top: 0;
+            }
+            .text{
+                position: absolute;
+                bottom: 0;
+                height: 21%;
+                left: 0;
+                right: 0;
+                overflow: hidden;
+                .inner{
+                    @include flexbox();
+                    @include justify-content(center);
+                    @include align-items(center);
+                    @include flex-direction(column);
+                    height: 100%;
+                    text-align: center;
+                    /* edit */
+                    h3{
+                        margin-bottom: 0;
+                    }
+                    h3,
+                    p{
+                        color:$primary;
+                    }
+                    .bg-left{
+                        left: 3.5%;
+                        position: absolute;
+                        transform: skew(-21deg, 0deg);
+                        background-color: #261579;
+                        height: 100%;
+                        width: 62%;
+                        z-index: 1;
+                    }
+                    .bg-right{
+                        right: 3.5%;
+                        position: absolute;
+                        transform: skew(21deg, 0deg);
+                        background-color: #261579;
+                        height: 100%;
+                        width: 62%;
+                        z-index: 1;
+                    }
+                    .only-text{
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+    }
+    .ic-bottom-section{
+        background-color: #fff;
+    }
+}
+
+@media only screen and (max-width:991px){
+    .about .ic-top-section .loaction-img {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}

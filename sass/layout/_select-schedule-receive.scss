@@ -1,0 +1,23 @@
+.ic-select-schedule{
+    h2{
+        margin-bottom: 12px;
+    }
+    p.heading-p{
+        margin-bottom: 30px;
+    }
+    .single-block{
+        margin-bottom: 35px;
+        h3{
+            color:$secondary;
+        }
+        a.ic-link-more{
+            text-decoration: underline !important;
+            color:$secondary;
+            padding-left: 20px;
+            font-weight: bold;
+        }
+    }
+
+    @extend %form;
+    @extend %form-group-margin;
+}

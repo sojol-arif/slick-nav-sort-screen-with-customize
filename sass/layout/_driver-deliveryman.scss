@@ -1,0 +1,202 @@
+.ic-delivery-banner{
+    background: url(../images/delivery/banner.png) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    .ic-text{
+        @include flexbox();
+        @include align-items(center);
+        padding:260px 0;
+        .ic-inner{
+            h1{
+                text-shadow: 1px 1px 1px;
+            }
+            p{
+                text-shadow: 1px 1px 1px rgba(0,0,0, .1);
+                max-width: 300px;
+            }
+            a{
+
+            }
+        }   
+    }
+}
+.ic-text-top{
+    text-align: center;
+    margin-bottom: 65px;
+}
+.ic-feature{
+    .row{
+        .col-lg-4{
+            @include flexbox();
+        }
+    }
+    h2{
+        color: $secondary;
+        font-weight: bold;
+        margin-bottom: 7px;
+    }
+    h1{
+
+    }
+    .ic-single-feature{
+        @include border-radius(10px);
+        @include box-shadow(1px 1.732px 7.68px 0.32px rgba(24, 23, 27, 0.1));
+        margin-bottom: 28px;
+        padding:35px;
+        flex-grow: 1;
+        .ic-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 34px;
+            font-size: 53px;
+            display: block;
+            i{
+                display: block;
+                color: #9f9f9f;
+            }
+        }
+        h3{
+
+        }
+        p{
+
+        }
+    }
+}
+.ic-deligated{
+    background-color: $box-color;
+    padding:0;
+    .ic-col{
+        padding:75px 0;
+        .ic-section-top-text{
+            h2{
+
+            }
+            h1{
+
+            }
+        }
+        p{
+
+        }
+        ul{
+            padding-left:21px;
+            li{
+                font-weight: 600;
+                line-height: 2;
+                list-style-image: url("../images/delivery/list-style.png");
+                padding-left: 20px;
+            }
+        }
+        a{
+
+        }
+        img{
+
+        }
+    }
+}
+.ic-silple{
+    .ic-single-silple{
+        margin-bottom: 40px;
+        .ic-icon{
+                @include border-radius(6px);
+                width: 65px;
+                height: 65px;
+                margin-bottom: 35px;
+                background-color: $secondary;
+                @extend %flex-center;
+                text-align: center;
+                margin-right: auto;
+                margin-left: auto;
+            i{
+                color:$primary;
+                font-size: 40px;
+            }
+        }
+        h3{
+            font-weight: bold;
+            color: $secondary;
+            text-align: center;
+        }
+        p{
+            text-align: center;
+        }
+    }
+}
+.ic-earn-money{
+    background-color: $box-color;
+    .single-content {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+    .coverate-top-p {
+        margin-bottom: 35px;
+    }
+    .single-content .image {
+        margin-bottom: 20px;
+    }
+    .ic-text-top{
+        text-align: left;
+    }
+    .text{
+        h3{
+            color:$secondary;
+        }
+    }
+}
+@media only screen and (max-width:991px){
+    .ic-delivery-banner .ic-text {
+        padding: 150px 0;
+    }
+    .ic-text-top {
+        margin-bottom: 40px;
+    }
+    .ic-earn-money .single-content {
+        margin-bottom: 40px;
+    }
+    .ic-deligated .ic-image{
+        display: flex;
+        align-items: center;
+    }
+    .ic-deligated .ic-col {
+        padding: 65px 0;
+    }
+}
+@media only screen and (max-width: 767px){
+    .ic-deligated .ic-col {
+        padding: 45px 0;
+    }
+    .ic-feature .ic-single-feature {
+        padding: 30px;
+    }
+    .ic-silple .ic-single-silple h3 {
+        margin-bottom: 7px;
+    }
+    .ic-silple .ic-single-silple .ic-icon {
+        margin-bottom: 25px;
+    }
+}
+@media only screen and (max-width: 575px){
+    .ic-delivery-banner .ic-text {
+        padding: 100px 0;
+    }
+    .ic-feature .ic-single-feature {
+        max-width: 330px;
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 330px;
+    }
+
+}
+@media only screen and (max-width: 450px){
+    .ic-feature .ic-single-feature {
+        width: 100%;
+    }
+    .ic-breadcrumb .breadcrumb li.breadcrumb-item a {
+        font-size: 16px;
+    }
+    .ic-breadcrumb h2 {
+        font-size: 18px;
+    }
+}
